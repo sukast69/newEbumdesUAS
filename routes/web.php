@@ -30,7 +30,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home', [
         'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
 
     ]);
 });
@@ -55,11 +54,10 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
 
     Route::post('/pengguna_air/{id_pengguna}', [PenggunaController::class, 'update'])->name('update');
     Route::get('pengguna/delete/{id_pengguna}', [PenggunaController::class, 'delete']);
+    Route::get('/create', [TarifAir2Controller::class, 'create']);
+
+    Route::get('/read', [TarifAir2Controller::class, 'read']);
+    Route::get('/show/{id_tarif}', [TarifAir2Controller::class, 'show']);
+    Route::get('/update/{id_tarif}', [TarifAir2Controller::class, 'update']);
 
 });
-
-Route::get('/create', [TarifAir2Controller::class, 'create']);
-
-Route::get('/read', [TarifAir2Controller::class, 'read']);
-Route::get('/show/{id_tarif}', [TarifAir2Controller::class, 'show']);
-Route::get('/update/{id_tarif}', [TarifAir2Controller::class, 'update']);

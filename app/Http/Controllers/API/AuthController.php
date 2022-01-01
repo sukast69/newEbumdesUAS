@@ -13,17 +13,18 @@ class AuthController extends Controller
         $user = User::where('email', $request->email)->first();
 
         if (!$user || !\Hash::check($request->password, $user->password)) {
-            return \response()->json([
+            return response()->json([
                 'message' => 'Unauthorized'],
                 401);
         }
 
-        $token = $user()->createToken('token_name')->plainTextToken;
+        $token = $user->createToken('token')->plainTextToken;
 
-        return \response()->json([
-            'message' => 'succses',
+        return response()->json([
+            'message' => 'success',
             'user' => $user,
-            'token' => $token],
-            200);
+            'token' => $token,
+        ], 200);
+
     }
 }
