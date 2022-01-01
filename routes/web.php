@@ -1,5 +1,6 @@
 <?php
 
+
 use App\Http\Controllers\PemakaianAirController;
 use App\Http\Controllers\PenggunaController;
 use App\Http\Controllers\TarifAir2Controller;
@@ -59,5 +60,7 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
     Route::get('/read', [TarifAir2Controller::class, 'read']);
     Route::get('/show/{id_tarif}', [TarifAir2Controller::class, 'show']);
     Route::get('/update/{id_tarif}', [TarifAir2Controller::class, 'update']);
+
+   
 
 });
