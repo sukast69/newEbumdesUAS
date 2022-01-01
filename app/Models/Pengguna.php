@@ -12,6 +12,11 @@ class Pengguna extends Model
     protected $table = "tb_pengguna_air";
     protected $primaryKey = "id_pengguna_air";
 
+    protected $fillable = [
+
+        'nik', 'nama_lengkap', 'nomer_hp', 'jenis_kelamin', 'alamat_pengguna', 'status_pengguna',
+    ];
+
     public function allData()
     {
         return DB::table('tb_pengguna_air')->get();

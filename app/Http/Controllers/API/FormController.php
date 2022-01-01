@@ -51,4 +51,64 @@ class FormController extends Controller
             'data_pengguna' => $pengguna,
         ], 200);
     }
+
+    public function edit($id_pengguna_air)
+    {
+        $pengguna = Pengguna::find($id_pengguna_air);
+        return response()->json([
+            'message' => 'Success',
+            'data_pengguna' => $pengguna,
+        ], 200);
+
+    }
+
+    public function update(Request $request, $id_pengguna_air)
+    {
+        $pengguna = Pengguna::find($id_pengguna_air);
+        $request->validate([
+            'nik' => 'required|min:16|max:16',
+            'nama_lengkap' => 'required',
+            'nomer_hp' => 'required|min:12|max:13',
+            'jenis_kelamin' => 'required',
+            'alamat_pengguna' => 'required',
+            'status_pengguna' => 'required',
+        ], [
+            'nik.required' => 'NIK wajib diisi !!',
+
+            'nik.min' => 'Masukan NIK 16 Karakter !!',
+            'nik.max' => 'Masukan NIK max 16 Karakter !!',
+            'nama_lengkap.required' => 'Nama wajib diisi !!',
+            'nomer_hp.required' => 'Nomer HP wajib diisi !!',
+            'nomer_hp.min' => 'nomer hp minimal 12 karakter',
+            'nomer_hp.max' => 'nomer hp minimal 13 karakter',
+
+            'jenis_kelamin.required' => 'Jenis Kelamin wajib diisi !!',
+            'alamat_pengguna.required' => 'Alamat Pengguna wajib diisi !!',
+            'status_penggguna.required' => 'Status Penggun awajib diisi !!',
+
+        ]);
+
+        $pengguna->update([
+
+            'nik' => $request->nik,
+            'nama_lengkap' => $request->nama_lengkap,
+            'nomer_hp' => $request->nomer_hp,
+            'jenis_kelamin' => $request->jenis_kelamin,
+            'alamat_pengguna' => $request->alamat_pengguna,
+            'status_pengguna' => $request->status_pengguna,
+        ]);
+        return response()->json([
+            'message' => 'Success',
+            'data_pengguna' => $pengguna,
+        ], 200);
+    }
+
+    public function delete($id_pengguna_air)
+    {
+        $pengguna = Pengguna::find($id_pengguna_air)->delete();
+        return response()->json([
+            'message' => 'Data pengguna air terhapus!',
+           
+        ], 200);
+    }
 }
