@@ -13,7 +13,7 @@ class CreatePenggunasTable extends Migration
      */
     public function up()
     {
-        Schema::create('pengguna', function (Blueprint $table) {
+        Schema::create('tb_pengguna_air', function (Blueprint $table) {
             $table->id('id_pengguna_air');
             $table->string('nama_lengkap');
             $table->string('nik');
