@@ -39,4 +39,5 @@ class TarifAirController extends Controller
             'data' => $data,
         ]);
     }
+
 }

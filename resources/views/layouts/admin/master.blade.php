@@ -289,7 +289,7 @@
                         </div>
                     </div>
                     <ul class="nav nav-primary">
-                        <li class="nav-item {{ request()->is('/') ? 'active' : '' }}">
+                        <li class="nav-item {{ request()->is('dashboard') ? 'active' : '' }}">
                             <a data-toggle="" href="/dashboard" class="" aria-expanded="false">
                                 <i class="fas fa-home"></i>
                                 <p>Dashboard</p>
@@ -336,12 +336,19 @@
                                 </ul>
                             </div>
                         </li>
+                        <li class="nav-item {{ request()->is('notifikasi') ? 'active' : '' }}">
+                            <a data-toggle="" href="/notifikasi" class="" aria-expanded="false">
+                                <i class="fas fa-bell"></i>
+                                <p>Notifikasi</p>
+                            </a>
+
+                        </li>
+
                         <li class="nav-item ">
                             <a data-toggle="" href="/" class="" aria-expanded="false">
                                 <i class="fas fa-cogs"></i>
                                 <p>Konfigurasi </p>
                             </a>
-
                         </li>
 
                     </ul>
@@ -557,7 +564,7 @@
         $(document).ready(function() {
 
             read()
-           
+
 
 
         });
@@ -633,7 +640,7 @@
 
                     read();
 
-                   
+
 
                 }
             });

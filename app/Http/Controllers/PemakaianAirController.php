@@ -9,4 +9,9 @@ class PemakaianAirController extends Controller
         return \view('admin.pengguna_air.v_pemakaian_air');
 
     }
+
+    public function notif()
+    {
+        return \view('admin.notifikasi.v_notifikasi');
+    }
 }
