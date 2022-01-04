@@ -40,4 +40,9 @@ class TarifAirController extends Controller
         ]);
     }
 
+    public function notif(Type $var = null)
+    {
+       return \view('admin.notifikasi.v_notifikasi');
+    }
+
 }

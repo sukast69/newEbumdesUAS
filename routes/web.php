@@ -1,9 +1,9 @@
 <?php
 
-
 use App\Http\Controllers\PemakaianAirController;
 use App\Http\Controllers\PenggunaController;
 use App\Http\Controllers\TarifAir2Controller;
+use App\Http\Controllers\TarifAirController;
 // use App\Http\Controllers\Pengguna2Controller;
 use Illuminate\Support\Facades\Route;
 
@@ -61,6 +61,6 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
     Route::get('/show/{id_tarif}', [TarifAir2Controller::class, 'show']);
     Route::get('/update/{id_tarif}', [TarifAir2Controller::class, 'update']);
 
-   
+    Route::get('/notifikasi', [TarifAirController::class, 'notif']);
 
 });

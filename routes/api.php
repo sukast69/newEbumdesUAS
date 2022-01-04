@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\API\AuthController;
-use App\Http\Controllers\API\FormController;
 use Illuminate\Support\Facades\Route;
 
 /*

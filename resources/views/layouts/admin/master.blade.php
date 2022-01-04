@@ -82,7 +82,7 @@
                                 <i class="fa fa-search"></i>
                             </a>
                         </li>
-                        <li class="nav-item dropdown hidden-caret">
+                        {{-- <li class="nav-item dropdown hidden-caret">
                             <a class="nav-link dropdown-toggle" href="#" id="messageDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fa fa-envelope"></i>
@@ -120,8 +120,8 @@
                                             class="fa fa-angle-right"></i> </a>
                                 </li>
                             </ul>
-                        </li>
-                        <li class="nav-item dropdown hidden-caret">
+                        </li> --}}
+                        {{-- <li class="nav-item dropdown hidden-caret">
                             <a class="nav-link dropdown-toggle" href="#" id="notifDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fa fa-bell"></i>
@@ -153,8 +153,8 @@
                                             class="fa fa-angle-right"></i> </a>
                                 </li>
                             </ul>
-                        </li>
-                        <li class="nav-item dropdown hidden-caret">
+                        </li> --}}
+                        {{-- <li class="nav-item dropdown hidden-caret">
                             <a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="false">
                                 <i class="fas fa-layer-group"></i>
                             </a>
@@ -206,7 +206,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </li>
+                        </li> --}}
                         <li class="nav-item dropdown hidden-caret">
                             <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"
                                 aria-expanded="false">
@@ -223,7 +223,7 @@
                                                     src="{{ asset('admin-temp/assets/img/profile.jpg') }}"
                                                     alt="image profile" class="avatar-img rounded"></div>
                                             <div class="u-text">
-                                                <h4>Hizrian</h4>
+                                                <h4>Kadek Suka Astawa</h4>
                                                 <p class="text-muted">hello@example.com</p><a href="profile.html"
                                                     class="btn btn-xs btn-secondary btn-sm">View Profile</a>
                                             </div>
@@ -338,7 +338,8 @@
                         </li>
                         <li class="nav-item {{ request()->is('notifikasi') ? 'active' : '' }}">
                             <a data-toggle="" href="/notifikasi" class="" aria-expanded="false">
-                                <i class="fas fa-bell"></i>
+                                <i class="fa fa-bell"></i>
+
                                 <p>Notifikasi</p>
                             </a>
 
